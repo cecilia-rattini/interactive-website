@@ -1,0 +1,308 @@
+/* body */
+body {
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    background-image: url(https://coolwallpapers.me/picsup/5438755-technology-wallpapers.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.content {
+    text-align: justify;
+    font-size: 18px;
+}
+
+/* title */
+h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+#titlebutton {
+    text-align: center;
+}
+
+/* menu */
+.menubar {
+    list-style-type: none;
+    overflow: hidden;
+    padding-left: 0px;
+    background-color: rgb(16, 46, 55);
+}
+
+.menubar li {
+    float: left;
+}
+
+/* search bar */
+form {
+    font-family: 'Rajdhani';
+    color: rgb(16, 46, 55);
+}
+
+/* links */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightblue;
+    text-decoration: none;
+}
+
+a:active {
+    color: lightblue;
+    text-decoration: none;
+}
+
+/* general buttons */
+.active {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: white;
+    color: rgb(48, 100, 119);
+    border: 0.5px;
+    padding: 14px 16px;
+    color: rgb(16, 46, 55);
+}
+
+.button:not(.active) {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: rgb(16, 46, 55);
+    color: white;
+    border: 0.5px solid rgb(16, 46, 55);
+    padding: 14px 16px;
+}
+
+.button:hover:not(.active) {
+    background-color: rgb(4, 15, 19);
+}
+
+/* submit button */
+#submitbutton {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(16, 46, 55);
+    color: white;
+    border: 0.5px solid rgb(16, 46, 55);
+    padding: 14px 16px;
+}
+
+#submitbutton:hover {
+    background-color: rgb(4, 15, 19);
+}
+
+/* research buttons */
+#rebuttons {
+    float: none;
+    margin: auto;
+    margin-bottom: 20px;
+    display: table;
+}
+
+/* general content styles */
+.heading {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: lightblue underline;
+}
+* {
+    box-sizing: border-box;
+}
+.threecolumn {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgb(14, 34, 41);
+    border-color: black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 10px -1px;
+}
+.twocolumn {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgb(14, 34, 41);
+    border-color: black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 10px -1px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tableh4 {
+    text-align: center;
+    background-color: rgb(23, 65, 78);
+    border: 1px solid rgb(16, 46, 55);
+    padding: 10px 10px;
+}
+
+.quote {
+    border-left: 5px solid white;
+    margin-left: 50px;
+    padding-left: 15px;
+    font-size: 19px;
+    text-align: justify;
+}
+
+/* homepage-specific content */
+#introleft {
+    float: left;
+    height: 180px;
+    width: 180px;
+    padding-top: 10px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+#introright {
+    float: right;
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+/* case studies-specific content */
+#csleft {
+    float: left;
+    height: 300px;
+    width: 250px;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#csleft2 {
+    float: left;
+    height: 200px;
+    width: 250px;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#csright {
+    float: right;
+    height: 200px;
+    width: 250px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+/* future prospects-specific content*/
+.fpleft {
+    float: left;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.fpright {
+    float: right;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.fpctext {
+    text-align: justify;
+    font-size: 16px;
+}
+
+/* sources-specific content */
+.websites {
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0px;
+}
+.journals {
+    padding-left: 36px;
+    text-indent: -36px;
+    list-style-type: none;
+    text-align: justify;
+}
+
+/* dark box background */
+div.box {
+    margin: 30px;
+    background-color: rgb(16, 46, 55);
+    border: 1px solid rgb(16, 46, 55);
+    opacity: 0.95;
+}
+
+div.box h3 {
+    margin: 5%;
+    color: white;
+}
+
+div.box p {
+    margin: 5%;
+    color: white;
+}
+
+/* footer */
+.col-md-3 {
+    background-color: rgb(16, 46, 55);
+    padding: 25px;
+}
+
+#logo {
+    max-height: 99px; 
+    max-width: 99px;
+}
+
+h4.textfooter {
+    font-weight: bold;
+}
+
+.footerlink {
+    list-style-type: none;
+    float: left;
+    padding-left: 0px;
+}
+
+.subfooter {
+    background-color: rgb(16, 46, 55);
+    padding: 25px;
+    text-align: center;
+}
+
+/* responsive: columns, embedded yt vid, images */
+@media screen and (max-width: 600px) {
+    .threecolumn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .twocolumn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    iframe {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    img {
+        width: 100%;
+    }
+}
