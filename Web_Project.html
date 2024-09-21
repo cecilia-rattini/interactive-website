@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- fontawesome (icons) stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- footer stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- main css styles-->
+    <style>
+        /* body */
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            background-image: url(https://coolwallpapers.me/picsup/5438755-technology-wallpapers.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        .content {
+            text-align: justify;
+            font-size: 18px;
+        }
+
+        /* title */
+        h1 {
+            text-align: center;
+            font-weight: 700;
+        }
+
+        #titlebutton {
+            text-align: center;
+        }
+
+        /* menu */
+        .menubar {
+            list-style-type: none;
+            overflow: hidden;
+            padding-left: 0px;
+            background-color: rgb(16, 46, 55);
+        }
+
+        .menubar li {
+            float: left;
+        }
+
+        /* search bar */
+        form {
+            font-family: 'Rajdhani';
+            color: rgb(16, 46, 55);
+        }
+
+        /* links */
+        a {
+            color: white;
+        }
+
+        a:hover {
+            color: lightblue;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: lightblue;
+            text-decoration: none;
+        }
+
+        /* general buttons */
+        .active {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            background-color: white;
+            color: rgb(48, 100, 119);
+            border: 0.5px;
+            padding: 14px 16px;
+        }
+
+        button:not(.active) {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            background-color: rgb(16, 46, 55);
+            color: white;
+            border: 0.5px solid rgb(16, 46, 55);
+            padding: 14px 16px;
+        }
+
+        button:hover:not(.active) {
+            background-color: rgb(4, 15, 19);
+        }
+
+        /* submit button */
+        #submitbutton {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: rgb(16, 46, 55);
+            color: white;
+            border: 0.5px solid rgb(16, 46, 55);
+            padding: 14px 16px;
+        }
+
+        #submitbutton:hover {
+            background-color: rgb(4, 15, 19);
+        }
+
+        /* research buttons */
+        #rebuttons {
+            float: none;
+            margin: auto;
+            margin-bottom: 20px;
+            display: table;
+        }
+
+        /* general content styles */
+        .heading {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 900;
+            text-align: center;
+            text-decoration: lightblue underline;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .threecolumn {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            border-width: 2px;
+            border-style: solid;
+            background-color: rgb(14, 34, 41);
+            border-color: black;
+            border-radius: 3px;
+            box-shadow: 1px 2px 10px -1px;
+        }
+        .twocolumn {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            border-width: 2px;
+            border-style: solid;
+            background-color: rgb(14, 34, 41);
+            border-color: black;
+            border-radius: 3px;
+            box-shadow: 1px 2px 10px -1px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .tableh4 {
+            text-align: center;
+            background-color: rgb(23, 65, 78);
+            border: 1px solid rgb(16, 46, 55);
+            padding: 10px 10px;
+        }
+
+        .quote {
+            border-left: 5px solid white;
+            margin-left: 50px;
+            padding-left: 15px;
+            font-size: 19px;
+            text-align: justify;
+        }
+
+        /* homepage-specific content */
+        #introleft {
+            float: left;
+            height: 180px;
+            width: 180px;
+            padding-top: 10px;
+            margin-right: 10px;
+            background-color: white;
+        }
+
+        #introright {
+            float: right;
+            width: 400px;
+            height: 250px;
+            background-color: white;
+            margin-left: 10px;
+            padding-top: 10px;
+        }
+
+        /* case studies-specific content */
+        #csleft {
+            float: left;
+            height: 300px;
+            width: 250px;
+            padding-top: 10px;
+            padding-right: 10px;
+        }
+
+        #csleft2 {
+            float: left;
+            height: 200px;
+            width: 250px;
+            padding-top: 10px;
+            padding-right: 10px;
+        }
+
+        #csright {
+            float: right;
+            height: 200px;
+            width: 250px;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+
+        /* future prospects-specific content*/
+        .fpleft {
+            float: left;
+            margin-right: 10px;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+
+        .fpright {
+            float: right;
+            margin-left: 10px;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+
+        .fpctext {
+            text-align: justify;
+            font-size: 16px;
+        }
+
+        /* sources-specific content */
+        .websites {
+            list-style-type: none;
+            text-align: center;
+            padding-left: 0px;
+        }
+        .journals {
+            padding-left: 36px;
+            text-indent: -36px;
+            list-style-type: none;
+            text-align: justify;
+        }
+
+        /* dark box background */
+        div.box {
+            margin: 30px;
+            background-color: rgb(16, 46, 55);
+            border: 1px solid rgb(16, 46, 55);
+            opacity: 0.95;
+        }
+
+        div.box h3 {
+            margin: 5%;
+            color: white;
+        }
+
+        div.box p {
+            margin: 5%;
+            color: white;
+        }
+
+        /* footer */
+        .col-md-3 {
+            background-color: rgb(16, 46, 55);
+            padding: 25px;
+        }
+
+        #logo {
+            max-height: 99px; 
+            max-width: 99px;
+        }
+
+        h4.textfooter {
+            font-weight: bold;
+        }
+
+        .footerlink {
+            list-style-type: none;
+            float: left;
+            padding-left: 0px;
+        }
+
+        .subfooter {
+            background-color: rgb(16, 46, 55);
+            padding: 25px;
+            text-align: center;
+        }
+
+        /* responsive: columns, embedded yt vid, images */
+        @media screen and (max-width: 600px) {
+            .threecolumn {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .twocolumn {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            iframe {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            img {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- search javascript/jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <title>WMS Website</title>
+    <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1 id="titlebutton">HUMAN-COMPUTER INTERACTION</h1>
+    <div id="menu">
+        <ul class="menubar">
+            <li><button class="active" id="homebutton">HOME</button></li>
+            <li><button id="researchbutton">RESEARCH</button></li>
+            <li><button id="sourcesbutton">SOURCES</button></li>
+            <li><button id="aboutusbutton">ABOUT US</button></li>
+            <li style="float:right">
+                <form method="get" id="form" role="search">
+                    <input type="search" id="query" name="q" placeholder="Search...">
+                    <button id="submitbutton" type="submit">SUBMIT</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div id="home" class="box">
+        <div id="intro">
+            <h3 class="heading"><strong>What is HCI?</strong></h3>
+            <p class="content"><img id="introleft"
+                    src="https://programmerblog.net/wp-content/uploads/2021/04/skills-for-human-computer-interaction.png"
+                    alt="Human Computer Interaction-fields">
+                Human-computer interaction (HCI) is defined as a multidisciplinary field of study that focuses on
+                optimizing how humans (the users) and computers interact with each other by designing interactive
+                computer interfaces that satisfy their needs. <br><br>
+                Initially the main focus was on the technical and computers aspects, now HCI has expanded to cover
+                almost all forms of information technology design. Therefore, this establishes HCI as a technology that
+                brings different fields and areas together such as computer engineering, cognitive psychology, computer
+                science, behavioural sciences, ergonomics and design principles.
+            </p>
+        </div>
+        <div id="history">
+            <h3 class="heading">HISTORY OF HCI</h3>
+            <p class="content">When we talk about Human-computer interaction, it is important to first define
+                man-machine interaction illustrated during the 70’. Because the focus was the design applied to everyday
+                life objects such as furniture and their usability.
+                Until the late 1970s, the only humans who interacted with computers were information technology
+                professionals and dedicated hobbyists. However, the technology evolved rapidly, shifting and moving more
+                the focus on machine and computer (textual interface).<br><br>
+
+                Therefore, HCI surfaced in the 1980s with the advent of personal computing. And everyone started talking
+                about “Human-computer” interaction, attracting professionals from many other disciplines and
+                incorporating diverse concepts and approaches.
+                Computers were available and widely spread in household, and this created a need to define a specific
+                field which related software and hardware design. Machines such as the Apple Macintosh, IBM PC 5150 and
+                Commodore 64 started turning up in homes and offices in society-changing numbers.<br>
+                For the first time, sophisticated electronic systems were available to general consumers for use.
+                Consequently, as computers were no longer room-sized, expensive tools exclusively built for experts in
+                specialized environments, the need to create human-computer interaction that was also easy and efficient
+                for less experienced users.<br><br>
+
+                By the early 1990s, the focus of HCI shifted away from computers and graphical interfaces to usability
+                evaluation, interaction design and user experience. In fact, the technical focus of HCI was and is still
+                the concept of <span style="font-style:oblique">usability</span>. This concept was originally
+                articulated somewhat naively in the slogan "easy to learn, easy to use".
+                Usability is an emergent quality that reflects the grasp and the reach of HCI, contemporary users want
+                more from a system than merely “ease of use”.
+                HCI includes social and organizational computing, accessibility for the elderly, the cognitively and
+                physically impaired, and for all people, and for the widest possible spectrum of human experiences and
+                activities.
+                <br><br>
+                The remarkable growth of HCI over the past 30 years has transformed this nascent interdisciplinary field
+                into a worldwide phenomenon, with a huge impact on daily life activities. Today, HCI is a vast and
+                multifaceted community, bound by the evolving concept of usability, and the integrating commitment to
+                value human activity and experience as the primary driver in technology.
+            </p>
+            <p class="quote"><em>“…it no longer makes sense to regard HCI as a specialty of computer science; HCI has
+                    grown to be broader, larger and much more diverse than computer science itself. HCI expanded from
+                    its initial focus on individual and generic user behaviour to include social and organizational
+                    computing, accessibility for the elderly, the cognitively and physically impaired, and for all
+                    people, and for the widest possible spectrum of human experiences and activities. It expanded from
+                    desktop office applications to include games, learning and education, commerce, health and medical
+                    applications, emergency planning and response, and systems to support collaboration and community.
+                    It expanded from early graphical user interfaces to include myriad interaction techniques and
+                    devices, multi-modal interactions, tool support for model-based user interface specification, and a
+                    host of emerging ubiquitous, handheld and context-aware interactions.”</em>
+                <br><br>
+                — John M. Carroll, Author and Founder of the field of Human-computer interaction.
+            </p>
+            <p class="content">
+                <br><img id="introright" src="https://miro.medium.com/max/1400/1*Gm2IF-qlv46LbxVrrAPY4A.webp"
+                    alt="Technologies facilitate HCI">
+                Nowadays, HCI is not merely focused on the interaction with computers, but related to the interaction
+                design, emotional, aesthetics and social engagement. Its principal objective is to develop functional
+                systems that are usable, safe, and efficient for end-users.<br><br>
+                HCI is crucial in designing intuitive interfaces that people with different abilities and expertise
+                usually access or who lack in knowledge and formal training on interacting with specific computing
+                systems.<br>
+                The ultimate goal of HCI is to reduce the amount of effort a user expends when using technology. It
+                aspires to make interactions between people and computers as simple, natural, and open-ended as
+                interactions between people. Therefore, the purpose is designing, implementing, and
+                evaluating interactive interfaces that enhance user experience using computing devices.
+            </p>
+        </div>
+    </div>
+
+
+    <div id="research">
+        <br>
+        <div id="rebuttons">
+            <button class="active" id="currentbutton" style="display: none">Case Studies</button>
+            <button id="futurebutton" style="display: none">Future Prospects</button>
+        </div>
+        <div id="casestudies" style="display: none" class="box">
+            <h3 class="heading"> From a sign to speech converter...</h3>
+            <p class="content">
+                <img id="csleft" src="https://i.ibb.co/r5KCVtn/1-f-CHCi-Fhn-Chjo-U-um-Bf-M77-Q.webp">A wearable hand
+                glove which can convert the sign language (specifically, American Sign Language) to speech output was
+                created by two students at the School of Engineering and Applied Science of Ahmedabad University, in
+                India.<br>
+                The two students involved in the project were both interested in the functioning of human interaction
+                with the world. In doing research before starting their own project, they came across three major
+                issues: <br><br>
+                1. Designing of a glove that could be easily worn and used.<br>
+                2. Different hand sizes would generate different outputs, as the gestures were different for different
+                hand sizes.<br>
+                3. The only way in which two speech-impaired people could communicate remotely were video calls. It was
+                therefore impossible for a speech impaired person to take part in an actual phone call.<br><br>
+                Before getting their hands dirty on the project, they also spoke to a faculty member in a school for
+                specially abled people located in Bhavnagar, India, coming up with an additional three insights in
+                regards to the students of that school:<br><br>
+                1. It was difficult for them to communicate with normal public in public places as majority of people
+                don’t know sign language.<br>
+                2. They became uncomfortable at the sight of two people having a conversation, wanting to take part in
+                that sort of interaction, but not being physically able to do so.<br>
+                3. Most of the students coming from rural area didn't have parents literate enough to know the sign
+                language. So for those students, it was also difficult to communicate with people they lived
+                with.<br><br>
+                To create the actual glove, one student was responsible for designing the actual glove, while the other
+                student developed the Machine Learning algorithm for generating outputs according to hand gestures.
+                Five flex sensors were used for five fingers which are connected to the micro-controller (Arduino Nano)
+                and a transmitter (Bluetooth Module) is connected to it to transmit the signs to the other systems, like
+                in the picture on the right.
+                <img id="csright" src="https://i.ibb.co/GsB2hJg/1-h-LWDu8-Dcg-Ge-Xg-NBn-Z6y8e-A.webp" border="0">
+                A k-NN algorithm was implemented for Machine Learning concepts and supervised learning was used to train
+                the model, and HC05 Bluetooth Module was used to establish communication between two systems.<br><br>
+                Click <a
+                    href="https://blog.mlreview.com/case-study-sign-to-speech-converter-facilitated-wireless-communication-358b3914d398"><u>here</u></a>
+                to know more about this case study.
+            </p>
+
+            <h3 class="heading"> …Towards successful 3D virtual learning! </h3>
+            <p class="content"> A shared online 3D virtual world was created for teaching Human Computer Interaction as
+                a final year course in an undergraduate curriculum. While there is considerable interest throughout
+                academia in using such multi-user virtual environments (MUVE) for education, academics experience many
+                challenges in exploring the various use-cases available when it comes to the use of MUVE.<br>
+                The purpose of the study was identifying some of the critical issues students might approach when making
+                use of MUVE to learn, as well as possible outcomes of this innovative learning modality.<br>
+                Using Second Life as their MUVE, 4th year undergrad Computer Science students were assigned the job to
+                build an interactive learning resource which could be used in 1st and 2nd year courses to help learning
+                about a specific algorithm.<br>
+                Dijkstra's algorithm is used to convert mathematical equations in infix notation to postfix notation,
+                and is known for leaving students quite bored and uninterested. Therefore, the solution developed by the
+                students was supposed to make the learning experience for that algorithm more engaging.<br><br>
+                <img id="csleft2" src="https://i.ibb.co/1847Xgg/Capture.png">
+                In the end, students were generally very successful in constructing useable and interactive learning
+                resources for the algorithm they were given to work with (an example of a machine proposed by the
+                students is displayed on the image on the left).
+                However, Second Life was described by most participants in the study as unpredictable and unreliable,
+                and project work had to be submitted two or three times due to problems with the ownership and
+                protections model.<br>
+                In conclusion, while the MUVE concept proved popular and successful, the use of Second Life as a
+                platform seems to have left a lot to be desired.<br><br>
+                Click <a
+                    href="https://www.researchgate.net/publication/221031831_Towards_successful_3D_virtual_learning_-_a_case_study_on_teaching_human_computer_interaction"><u>here</u></a>
+                to know more about this case study.
+            </p>
+            </p>
+        </div>
+
+        <div id="futureprospects" style="display:none" class="box">
+            <h3 class="heading">Where we are now with HCI…</h3>
+            <p class="quote"><em>Human-Computer Interaction essentially predates UX (User Experience) Design. The
+                    way in which we interact with machines and computers has evolved drastically as humans discover more
+                    ways to exploit the technology we have.</em>
+            </p>
+            <p class="content"><img class="fpleft"
+                    src="https://martech.org/wp-content/uploads/2016/02/mobile-apps_phone2_ss_1920-800x450.png"
+                    alt="Mobile Device Versatility" style="width: 400px; height: 200px">
+                UI (User Interface) has in turn increased in importance due the way that mobile devices are
+                paving the way for new and unique interactions between humans and computers, be it for everyday
+                activities to important research across multiple fields of studies.
+                <br><br>
+                The amount of computing power our smartphones possess today is truly astounding. For perspective, a
+                mobile device has more computer power than all of NASA had back in 1969, when it sent two astronauts to
+                the moon. These portable devices have enabled various facets for new human-computer interactions, all in
+                the palm of one’s hand.
+                <br><br>
+                This video of a baby who, after seeing how to use an iPad (utilising the touch screen to tap and
+                scroll), tries to use the same technique on a paper
+                magazine is a prime example of how HCI is changing the ways of everyday living.
+                <center><iframe width="560" height="315" src="https://www.youtube.com/embed/aXV-yaFmQNk"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe></center>
+            </p>
+
+            <p class="content"><img class="fpright"
+                    src="https://cdn.shopify.com/s/files/1/2272/2505/articles/Among_US_llega_a_realidad_virtual_800x.jpg?v=1639507850"
+                    alt="current Virtual Reality" style="width:350px; height: 250px">
+                Voice is another type of interaction that is widely spread with programs such as
+                Apple’s Siri, Amazon’s Alexa, and Google Home making it possible to access multiple functions of your
+                smart devices and appliances, allowing the user to search the internet and utilise other simple tasks
+                using merely your voice.
+                <br><br>
+                The potential of this type of human-computer interaction is vast, but there are still more ways to fully
+                use the technology we have. Virtual Reality (VR) advancements are also on the rise, currently commonly
+                used for immersive gaming experiences. Smart Wearables have also been in the spotlight now, with how
+                common smart watches are becoming, as these devices become smaller, more featured, and more stylish.
+                These devices are versatile enough to give better user experiences while using commonly used
+                technologies.
+            </p>
+            <h3 class="heading">HCI in the years to come…</h3>
+            <p class="content">
+                While we are currently witnessing various advancements in the devices we use on a daily basis, there are
+                still improvements to come which will potentially change how we experience technology as users.
+                <br><br>
+                <small>Below are some of the most prominent broad areas of technology which are predicted to make huge
+                    technological
+                    advancements in the coming future. </small>
+            <div class="row">
+                <div class="threecolumn">
+                    <h4 class="tableh4">Voice-Guided User Interfaces</h4>
+                    <p class="fpctext">Voice interaction has the potential to go beyond accessing menial tasks and
+                        surfing the web. It’s predicted that, in the next few years, the adoption rate of speech
+                        recognition will be over 80%. This makes a lot of considering how much smaller and slimmer our
+                        screens are getting. With less surface, interfaces will become much harder to navigate. Touch
+                        will likely still be the main interface on mobile for a long time to come, however, voice
+                        certainly promises a deeper and more ubiquitous method for interacting with our devices.</p>
+                </div>
+                <div class="threecolumn">
+                    <h4 class="tableh4">Virtual and Augmented Reality (VR and AR)</h4>
+                    <p class="fpctext">With Meta’s purchase of Oculus and Microsoft entering the VR arena with HoloLens,
+                        the competition in the VR landscape is really starting to heat up. These headsets might
+                        eventually render TVs obsolete, providing a much more immersive experience when watching videos
+                        and playing games. Even today, most people resort to their laptops or computers rather than use
+                        TVs to stream shows and movies, and the rise of VR will lessen the use even more.
+                        <br><br>
+                        This new technology will come with a completely new set of human-computer interactions. Once
+                        these headsets become commonplace, augmented reality will truly come into its own. These new VR
+                        technologies will give rise to so many new and unique interactions, it will truly change the way
+                        we design user interfaces and interact with computer systems. Interfaces will no longer be
+                        trapped in tiny screens but will instead inhabit our own three-dimensional world.
+                    </p>
+                </div>
+                <div class="threecolumn">
+                    <h4 class="tableh4">Wearable Technology</h4>
+                    <p class="fpctext">Smart watches are becoming something almost everyone has. Be it a simple one that
+                        tracks a person’s vitals and exercise habits to very advanced ones that are practically their
+                        own separate devices! The Apple watch for example has already introduced some really unique
+                        interactions like the digital crown and the ability to view another person’s pulse. In the
+                        coming decade, these devices will become cheaper, more functional and less dependent on your
+                        phone, which will in turn make them far more adoptable.
+                        <br><br>
+                        That being said, the wearables market as we know it might not even exist in the next 20-30
+                        years. The current wearables landscape is filled with smart jewellery, smart watches, and even
+                        smart shoes. And while these gadgets will have their place in history, they are more-or-less a
+                        stopgap. Eventually we will be able to inject this technology directly into our bodies. This
+                        means you’ll be able to monitor your most important vital signs without any hardware at all. And
+                        just thinking of all the data, you’ll literally have a consistent and accurate record of all of
+                        your vital signs throughout your life! The benefits to human health alone could be huge. For now
+                        though, the wearables market is slowly gaining momentum and there are a lot of new interactions
+                        and design patterns that will come from that.
+                    </p>
+                </div>
+            </div>
+            </p>
+
+            <h3 class="heading">Conclusions</h3>
+            <p class="content">
+                While we can never accurately predict how far we can go in terms of technological
+                evolution, there’s one
+                thing that remains certain – new forms of HCI will change our lives significantly. They will,
+                undoubtedly, offer the chance to improve the quality of life of people who can’t take advantage of
+                current interfaces due to physical disabilities. As per usual with these drastic changes in technology,
+                new issues will arise such as the ones related to privacy, security, and ethics, thus potentially
+                slowing the diffusion of new hardware and software.
+                <br><br>
+                <img class="fpright"
+                    src="https://www.gep.com/prod/s3fs-public/blog-images/vision-or-delusion-how-future-technology-varies-from-present-day-expectations.jpg"
+                    alt="possible future of technology" style="width:400px; height: 250px">
+
+                What is amazing about human computer interaction is that just as the mouse and the keyboard were
+                innovations, and the iPhone was a better innovation, the Kinect is also an innovation in response to
+                input technology. But all these are just stepping stones towards less physical interfaces.
+            </p>
+            <p class="quote"><strong><em>The opportunities for HCI are tremendous. Progress toward more user-friendly
+                        and natural
+                        interfaces for human-machine interaction can yield a plethora of advantages and can majorly
+                        impact
+                        everyday life.
+                    </em></strong></p>
+        </div>
+    </div>
+
+    <div id="sources" style="display: none" class="box">
+        <h3 class="heading">References and Resources</h3>
+        <div class="row">
+            <div class="twocolumn">
+                <h4 class="tableh4">Websites</h4>
+                <div>
+                    <ul class="websites">
+                        <li><a href="https://www.spiceworks.com/tech/artificial-intelligence/articles/what-is-hci/">What Is HCI (Human-Computer Interaction)?</a></li>
+                        <li><a href="https://blog.mlreview.com/case-study-sign-to-speech-converter-facilitated-wireless-communication-358b3914d398">Human-Computer Interaction Case Study</a></li>
+                        <li><a href="https://careerfoundry.com/en/blog/ui-design/the-future-of-human-computer-interaction-whats-next/">What's the Future Of Human-Computer Interaction (HCI)?</a></li>
+                        <li><a href="https://usabilitygeek.com/what-is-the-next-frontier-for-human-computer-interaction/">What Is The Next Frontier For Human Computer Interaction?</a></li>
+                        <li><a href="https://www.analyticssteps.com/blogs/ubiquitous-computing-characteristics-advantages-challenges">Ubiquitous Computing: Characteristics, Advantages & Challenges</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="twocolumn">
+                <h4 class="tableh4">Journals</h4>
+                <div>
+                    <ul class="journals">
+                        <li><a href="https://www.researchgate.net/publication/281006272_Human-Computer_Interaction_Overview_on_State_of_the_Art">Fakhreddine Karray, Milad Alemzadeh, Jamil Abou Saleh and Mo Nours Arab Pattern Analysis and Machine Intelligence Lab., Department of Electrical and Computer Engineering University of Waterloo, Waterloo, Canada. Human-Computer Interaction: Overview on State of the Art. International Journal on Smart Sensing and Intelligent Systems, Vol. 1, No. 1, March 2008.</a></li>
+                        <li><a href="https://www.mdpi.com/1424-8220/21/21/7183">Marques, L., Matsubara, P. G., Nakamura, W. T., Ferreira, B. M., Wiese, I. S., Gadelha, B. F., ... & Conte, T. U. (2021). Understanding UX Better: A New Technique to Go beyond Emotion Assessment. Sensors, 21(21), 7183.</a></li>
+                        <li><a href="https://www.researchgate.net/publication/221031831_Towards_successful_3D_virtual_learning_-_a_case_study_on_teaching_human_computer_interaction">Perera, I., Allison, C., Nicoll, J. R., & Sturgeon, T. (2009, November). Towards successful 3D virtual learning-a case study on teaching human computer interaction. In 2009 International Conference for Internet Technology and Secured Transactions,(ICITST) (pp. 1-6). IEEE.</a></li>
+                        <li><a href="https://iw2021.xrenlab.com/static/reference/Ren2019_Article_Human-EngagedComputingTheFutureofHCI.pdf">Ren, X., Silpasuwanchai, C., & Cahill, J. (2019). Human-engaged computing: the future of human–computer interaction. CCF transactions on pervasive computing and interaction, 1(1), 47-68.</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p> </p>
+    </div>
+
+    <div id="about" style="display: none" class="box">
+        <h3 class="heading">Get to know the developers!</h3>
+        <div class="row">
+            <div class="threecolumn">
+                <h4 class="tableh4">Bruna Moema Dias Bahmed</h4>
+                <center><div>
+                <span><a href="https://it.linkedin.com/in/bruna-moema-dias-bahmed-87210a216"><i style="font-size:24px" class="fa">&#xf08c;</i></a></span>
+                <span><a href="mailto:bruna.diasbahmed@studio.unibo.it"><i style="font-size:24px" class="fa">&#xf0e0;</i></a></p></span>
+                </div></center>
+            </div>
+            <div class="threecolumn">
+                <h4 class="tableh4">Mikayla Alessandra Mendoza</h4>
+                <center><div>
+                <span><a href="https://www.linkedin.com/in/mikaylamendoza/"><i style="font-size:24px" class="fa">&#xf08c;</i></a></span>
+                <span><a href="mailto:mikayla.mendoza@studio.unibo.it"><i style="font-size:24px" class="fa">&#xf0e0;</i></a></p></span>
+                </div></center>
+            </div>
+            <div class="threecolumn">
+                <h4 class="tableh4">Cecilia Mina Rattini</h4>
+                <center><div>
+                <span><a href="https://www.linkedin.com/in/cecilia-rattini/"><i style="font-size:24px" class="fa">&#xf08c;</i></a></span>
+                <span><a href="mailto:ceciliamina.rattini@studio.unibo.it"><i
+                        style="font-size:24px" class="fa">&#xf0e0;</i></a></p></span>
+                </div></center>
+            </div>
+        </div>
+        <p> </p>
+    </div>
+
+    <div class="footer">
+        <div class="col-md-3">
+            <img id="logo" src="HCI_v1.png">
+        </div>
+        <div class="col-md-3">
+            <h4 class="textfooter">OUR COURSE</h4>
+            <ul class="footerlink">
+                <li><a href="https://corsi.unibo.it/2cycle/DigitalTransformationManagement">Get to know DTM</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h4 class="textfooter">SOCIAL MEDIA</h4><a href="https://www.instagram.com/dtm_unibo/"><i
+                    style="font-size:24px" class="fa">&#xf16d;</i></a>
+        </div>
+        <div class="col-md-3">
+            <h4 class="textfooter">WHERE TO FIND US</h4>Via dell'Università 50<br>Cesena<br>Italy
+        </div>
+    </div>
+    <div class="subfooter">
+        <div>2022 © Human Computer Interaction. All rights reserved - HTML5 JavaScript</div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("button:not(#submitbutton)").click(function () {
+            $("button.active").removeClass("active");
+            $(this).addClass("active");
+            return false;
+        });
+
+        $("#titlebutton").click(function () {
+            $("#home").css("display", "block");
+            $("#research").css("display", "none");
+            $("#sources").css("display", "none");
+            $("#about").css("display", "none");
+            $("#homebutton").addClass("active");
+            $("#researchbutton").removeClass("active");
+            $("#sourcesbutton").removeClass("active");
+            $("#aboutusbutton").removeClass("active");
+        });
+
+        $("#homebutton").click(function () {
+            $("#home").css("display", "block");
+            $("#research").css("display", "none");
+            $("#sources").css("display", "none");
+            $("#about").css("display", "none");
+        });
+
+        $("#researchbutton").click(function () {
+            $("#research").css("display", "block");
+            $("#currentbutton").css("display", "inline-block");
+            $("#futurebutton").css("display", "inline-block");
+            $("#casestudies").css("display", "block");
+            $("#currentbutton").addClass("active");
+            $("#futureprospects").css("display", "none");
+            $("#home").css("display", "none");
+            $("#sources").css("display", "none");
+            $("#about").css("display", "none");
+        });
+        $("#sourcesbutton").click(function () {
+            $("#sources").css("display", "block");
+            $("#home").css("display", "none");
+            $("#research").css("display", "none");
+            $("#about").css("display", "none");
+        });
+        $("#aboutusbutton").click(function () {
+            $("#about").css("display", "block");
+            $("#home").css("display", "none");
+            $("#research").css("display", "none");
+            $("#sources").css("display", "none");
+        });
+        $("#currentbutton").click(function () {
+            $("#casestudies").css("display", "block");
+            $("#futureprospects").css("display", "none");
+            $("#researchbutton").addClass("active");
+        });
+        $("#futurebutton").click(function () {
+            $("#futureprospects").css("display", "block");
+            $("#casestudies").css("display", "none");
+            $("#researchbutton").addClass("active");
+        });
+        $("#query").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#home *").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+            $("#casestudies *").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+            $("#futureprospects *").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+            $("#sources *").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+            $("#about *").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    })
+</script>
+
+</html>
